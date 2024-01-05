@@ -1,6 +1,6 @@
 <?php /* must be outside of masthead for stickness */ ?>
-	<div id="navbar-sticky-detector" class="header-personal"></div>
-	<nav class="navbar navbar-main navbar-expand-lg navbar-light bg-white header-personal">
+	<!-- <div id="navbar-sticky-detector" class="header-personal"></div> -->
+	<nav class="navbar navbar-main navbar-expand-lg navbar-light bg-white header-personal stuck">
 		<div class="container">
 			<div class="d-flex w-100">
 			<div class="container d-flex align-items-center bloginfo">

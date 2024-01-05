@@ -1,4 +1,6 @@
 #content {
+    /* To be used with personal header */
+    margin-top: var(--personal-navbar-height);
 
     .entry-content p a {
         text-decoration: none;
@@ -59,4 +61,23 @@
 .max-800 {
     max-width: 800px;
     margin: auto;
+}
+
+.wp-block-columns {
+    @include media-breakpoint-up(md) {
+        &.wrap-md {
+            flex-wrap: wrap !important;
+
+            &.wrap-4 {
+                > .wp-block-column {
+                    flex-basis: 25%;
+                }
+            }
+            &.wrap-3 {
+                > .wp-block-column {
+                    flex-basis: 33.33%;
+                }
+            }
+        }
+    }
 }

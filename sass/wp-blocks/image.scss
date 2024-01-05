@@ -2,6 +2,10 @@
     margin-bottom: 0;
     border-radius: $border-radius;
 
+    &, figure {
+        position: relative
+    }
+
     &:not(.is-style-rounded) {
 
         img {
@@ -9,14 +13,58 @@
         }
     }
 
+    a {
+        display: block;
+
+        &:after {
+            content: "";
+            position: absolute;
+            font-size: $font-size-xlarge;
+            right: 1em;
+            bottom: 1em;
+            width: 32px;
+            height: 20px;
+            background-color: $white;
+            -webkit-mask-image: url("assets/img/arrow-right.svg");
+            mask-image: url("assets/img/arrow-right.svg");
+        }
+    }
+
     figcaption {
-        position: relative;
-        width: unset;
-        color: inherit;
-        text-align: right;
-        font-size: $small-font-size;
+        position: absolute;
+        margin: 0;
+        left: 1em;
+        bottom: 1em;
+        max-width: 70%;
+
+        color: $white;
+        font-size: $font-size-xlarge;
+        font-family: GrueneType;
         background: none;
-        margin-right: 0.3em;
-        margin-top: 0.5em;
+
+        pointer-events: none;
+    }
+
+    @include media-breakpoint-down(lg) {
+        figcaption {
+            font-size: $font-size-large;
+        }
+    }
+}
+
+.compact-images {
+    figcaption {
+        font-size: $font-size-large;
+    }
+}
+
+figure.wp-block-image, .wp-block-image > figure {
+    box-shadow: none;
+    transition: 0.1s linear;
+    transform: translateY(0);
+
+    &:hover {
+        box-shadow: 0 1px 20px rgba(0, 84, 55, 0.09);
+        transform: translateY(-0.2rem);
     }
 }
