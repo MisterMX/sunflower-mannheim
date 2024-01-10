@@ -68,18 +68,18 @@ $sunflower_social_media_profiles = get_sunflower_social_media_profiles();
 						</nav>
 					</div>
 				</div>
-			
+
 				<div class="row">
 					<div class="col-12 mt-4 mb-4">
 						<hr>
-					</div>    
+					</div>
 				</div>
 
 				<?php
 			}
 			?>
-				
-			
+
+
 			<div class="row d-block d-lg-none mb-5">
 				<div class="col-12">
 					<nav class=" navbar navbar-top navbar-expand-md d-flex justify-content-center">
@@ -102,17 +102,16 @@ $sunflower_social_media_profiles = get_sunflower_social_media_profiles();
 				</div>
 			</div>
 
-			
+
 			<div class="row">
 				<div class="col-8 col-md-10">
 					<p class="small">
-						<?php bloginfo( 'name' ); ?> benutzt das<br>freie 
-						grüne Theme <a href="https://sunflower-theme.de" target="_blank">sunflower</a> &dash; ein 
-						Angebot der <a href="https://verdigado.com/" target="_blank">verdigado eG</a>.
+						<?php bloginfo( 'name' ); ?> benutzt das<br>freie
+						grüne Theme <a href="https://github.com/MisterMX/sunflower-mannheim" target="_blank">sunflower-mannheim</a>.
 					</p>
 				</div>
 				<div class="col-4 col-md-2">
-				
+
 					<?php
 					$logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
 
@@ -125,8 +124,8 @@ $sunflower_social_media_profiles = get_sunflower_social_media_profiles();
 				</div>
 			</div>
 
-			
-			
+
+
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
