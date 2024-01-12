@@ -219,6 +219,23 @@ body {
                 @include media-breakpoint-up(lg) {
                     height: 5em;
                 }
+
+                a[target="_blank"] {
+                    &:after {
+                        content: "\f08e";
+
+                        -moz-osx-font-smoothing: grayscale;
+                        -webkit-font-smoothing: antialiased;
+                        display: var(--fa-display, inline-block);
+                        font-style: normal;
+                        font-variant: normal;
+                        line-height: 1;
+                        text-rendering: auto;
+                        font-family: var(--fa-style-family, "Font Awesome 6 Free");
+                        font-weight: var(--fa-style, 900);
+                        margin-left: 2em;
+                    }
+                }
             }
 
             > .current-menu-item:not(.button-primary) {

@@ -29,15 +29,15 @@
             background: none;
             color: $white;
             border-radius: 0;
-            border-color: $navbar-dark-color;
+            border-color: transparent;
             width: 0;
             padding-left: 15px;
-            border-width: 0;
+            border-width: 1px;
             transition: width 0.4s ease-out 0s;
 
             &.active {
                 width: 200px;
-                border-width: 1px;
+                border-color: $navbar-dark-color;
             }
 
             &:focus {

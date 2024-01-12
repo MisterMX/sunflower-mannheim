@@ -1,6 +1,7 @@
 .wp-block-image {
     margin-bottom: 0;
     border-radius: $border-radius;
+    background: transparent;
 
     &, figure {
         position: relative
@@ -62,9 +63,10 @@ figure.wp-block-image, .wp-block-image > figure {
     box-shadow: none;
     transition: 0.1s linear;
     transform: translateY(0);
+    border-radius: $border-radius;
 
     &:hover {
-        box-shadow: 0 1px 20px rgba(0, 84, 55, 0.09);
+        box-shadow: 0 1px 20px rgba(0, 84, 55, 0.5);
         transform: translateY(-0.2rem);
     }
 }
