@@ -20,13 +20,17 @@ $sunflower_social_media_profiles = get_sunflower_social_media_profiles();
 	<footer id="colophon" class="site-footer">
 		<div class="container site-info">
 			<?php
-			if ( has_nav_menu( 'footer1' ) || has_nav_menu( 'footer2' ) || $sunflower_social_media_profiles ) {
+			if ( has_nav_menu( 'footer1' ) || has_nav_menu( 'footer2' ) || has_nav_menu( 'footer3' ) ) {
 				?>
-				<div class="row">
-					<div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-start">
-
-						<nav class="navbar navbar-top navbar-expand-md ">
-							<div class="text-center ">
+				<div class="row menu-container">
+					<div class="col-12 col-md-4 menu">
+						<nav>
+							<div>
+                                <h6 class="menu-title">
+                                    <?php
+                                        echo wp_get_nav_menu_name('footer1');
+                                    ?>
+                                </h6>
 							<?php
 								wp_nav_menu(
 									array(
@@ -34,7 +38,7 @@ $sunflower_social_media_profiles = get_sunflower_social_media_profiles();
 										'menu_id'        => 'footer1',
 										'depth'          => 1, // 1 = no dropdowns, 2 = with dropdowns.
 										'container'      => false,
-										'menu_class'     => 'navbar-nav small',
+										'menu_class'     => 'small',
 										'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
 										'walker'         => new WP_Bootstrap_Navwalker(),
 									)
@@ -43,14 +47,15 @@ $sunflower_social_media_profiles = get_sunflower_social_media_profiles();
 							</div>
 						</nav>
 					</div>
-					<div class="col-12 col-md-4 p-2 justify-content-center d-flex">
-				<?php
-				echo $sunflower_social_media_profiles;
-				?>
-					</div>
-					<div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
-						<nav class="navbar navbar-top navbar-expand-md">
-							<div class="text-center">
+
+					<div class="col-12 col-md-4 menu">
+                        <nav>
+							<div>
+                                <h6 class="menu-title">
+                                    <?php
+                                        echo wp_get_nav_menu_name('footer2');
+                                    ?>
+                                </h6>
 							<?php
 								wp_nav_menu(
 									array(
@@ -58,7 +63,32 @@ $sunflower_social_media_profiles = get_sunflower_social_media_profiles();
 										'menu_id'        => 'footer2',
 										'depth'          => 1, // 1 = no dropdowns, 2 = with dropdowns.
 										'container'      => false,
-										'menu_class'     => 'navbar-nav small',
+										'menu_class'     => 'small',
+										'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
+										'walker'         => new WP_Bootstrap_Navwalker(),
+									)
+								);
+							?>
+							</div>
+						</nav>
+					</div>
+
+                    <div class="col-12 col-md-4 menu">
+                        <nav>
+							<div>
+                                <h6 class="menu-title">
+                                    <?php
+                                        echo wp_get_nav_menu_name('footer3');
+                                    ?>
+                                </h6>
+							<?php
+								wp_nav_menu(
+									array(
+										'theme_location' => 'footer3',
+										'menu_id'        => 'footer3',
+										'depth'          => 1, // 1 = no dropdowns, 2 = with dropdowns.
+										'container'      => false,
+										'menu_class'     => 'small',
 										'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
 										'walker'         => new WP_Bootstrap_Navwalker(),
 									)
@@ -79,6 +109,19 @@ $sunflower_social_media_profiles = get_sunflower_social_media_profiles();
 			}
 			?>
 
+            <?php
+            if ( $sunflower_social_media_profiles ) {
+                ?>
+
+                <div class="col-12 col-md-4 p-2 justify-content-center d-flex">
+                    <?php
+                        echo $sunflower_social_media_profiles;
+                    ?>
+                </div>
+
+                <?php
+            }
+            ?>
 
 			<div class="row d-block d-lg-none mb-5">
 				<div class="col-12">
@@ -104,21 +147,42 @@ $sunflower_social_media_profiles = get_sunflower_social_media_profiles();
 
 
 			<div class="row">
-				<div class="col-8 col-md-10">
-					<p class="small">
+				<div class="col-12 col-lg-4 flex-centered-vertically">
+					<p class="small text-md-center">
 						<?php bloginfo( 'name' ); ?> benutzt das<br>freie
 						grüne Theme <a href="https://github.com/MisterMX/sunflower-mannheim" target="_blank">sunflower-mannheim</a>.
 					</p>
 				</div>
-				<div class="col-4 col-md-2">
+                <div class="col-12 col-lg-4 flex-centered-vertically">
+                    <nav class="menu-bottom">
+                        <?php
+                            if (has_nav_menu( 'footer1' )) {
+                                wp_nav_menu(
+                                    array(
+                                        'theme_location' => 'bottommenu',
+                                        'menu_id'        => 'bottommenu',
+                                        'depth'          => 1, // 1 = no dropdowns, 2 = with dropdowns.
+                                        'container'      => false,
+                                        'menu_class'     => 'small',
+                                        'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
+                                        'walker'         => new WP_Bootstrap_Navwalker(),
+                                    )
+                                );
+                            }
+						?>
+                    </nav>
+                </div>
+                <div class="col-lg-2 hidden-sm">
+                </div>
+				<div class="col-12 col-lg-2 flex-centered-vertically">
 
 					<?php
 					$logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
 
 					if ( has_custom_logo() ) {
-						printf( '<img src="%s" class="img-fluid" alt="Logo %s">', esc_url( $logo[0] ), get_bloginfo( 'name' ) );
+						printf( '<img src="%s" class="img-fluid logo" alt="Logo %s">', esc_url( $logo[0] ), get_bloginfo( 'name' ) );
 					} else {
-						printf( '<img src="%s" class="img-fluid" alt="Logo Bündnis 90/Die Grünen">', sunflower_parent_or_child( 'assets/img/logo-diegruenen.png' ) );
+						printf( '<img src="%s" class="img-fluid logo" alt="Logo Bündnis 90/Die Grünen">', sunflower_parent_or_child( 'assets/img/logo-diegruenen-baden-wuerttemberg.svg' ) );
 					}
 					?>
 				</div>
