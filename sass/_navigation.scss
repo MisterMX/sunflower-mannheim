@@ -221,6 +221,7 @@
         border: 0;
 
         @include media-breakpoint-up(lg) {
+            display: block;
             visibility: hidden;
         }
 
