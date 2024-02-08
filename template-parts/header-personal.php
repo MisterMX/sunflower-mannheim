@@ -26,8 +26,10 @@
 			</div>
 
 			<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu-container" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle navigation">
-				<i class="fas fa-times close"></i>
-				<i class="fas fa-bars open"></i>
+                <?php
+                    printf( '<img src="%s" class="close">', sunflower_parent_or_child( 'assets/img/menu-times.svg' ) );
+                    printf( '<img src="%s" class="open">', sunflower_parent_or_child( 'assets/img/menu-bars.svg' ) );
+                ?>
 			</button>
 
 			</div>
@@ -48,7 +50,7 @@
 				?>
 			</div>
 
-			<div class="social-media-profiles d-none d-md-flex">
+			<div class="social-media-profiles d-none d-lg-flex">
 				<?php
 					echo get_sunflower_social_media_profiles();
 				?>

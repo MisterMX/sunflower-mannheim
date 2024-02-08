@@ -40,6 +40,10 @@ $verydarkgreen: #072415;
 $border-radius: 0.5rem;
 $border-radius-small: 1px;
 
+$button-hover-box-shadow: 0 1px 20px rgba(0, 84, 55, 0.5);
+$button-hover-transform: translateY(-0.2rem);
+$button-hover-transition: box-shadow linear 0.1s, transform linear 0.1s;
+
 $container-max-widths: (
     sm: 540px,
     md: 720px,

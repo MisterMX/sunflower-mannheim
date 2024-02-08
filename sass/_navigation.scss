@@ -6,18 +6,49 @@
 
             &:hover {
 
-                .nav-link {}
+                .nav-link {
+                    color: $verydarkgreen;
+                }
 
                 div.dropdown-menu {
                     display: block;
+                    opacity: 1;
+                    visibility: visible;
 
                     ul {
-                        border-radius: 0;
+                        border-radius: $border-radius;
                     }
                 }
             }
         }
 
+        .submenu-opener {
+            display: none;
+        }
+
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .submenu-opener {
+        i {
+            transition: transform 0.2s linear;
+        }
+        &[aria-expanded="true"] {
+            i {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    .dropdown-menu {
+        display: block;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s linear;
+
+        &.show {
+            max-height: 150px;
+        }
     }
 }
 
@@ -122,7 +153,7 @@
             .current-menu-parent,
             .current-menu-item.active {
 
-                a.nav-link {
+                a.nav-link:not([href="#"]) {
                     color: $primary;
 
                     &:hover {
@@ -186,9 +217,12 @@
     &-menu {
         border-radius: 0;
         padding: 0;
-        display: none; // block for testing
         background: transparent;
         border: 0;
+
+        @include media-breakpoint-up(lg) {
+            visibility: hidden;
+        }
 
         &-spacer {
             height: 0;
@@ -210,6 +244,15 @@
                 @include media-breakpoint-up(lg) {
                     border: 0;
                     box-shadow: 0 25px 20px rgba(0, 0, 0, 0.1);
+
+                    opacity: 0;
+                    transition: opacity 0.2s linear;
+                }
+
+                @include media-breakpoint-down(lg) {
+                    ul {
+                        background-color: map-get($custom-colors, "sand");
+                    }
                 }
             }
 
@@ -244,14 +287,19 @@
                 margin-right: 0;
 
                 a {
-                    font-size: 18px;
+                    font-size: 0.8em;
                     text-transform: none;
-                    font-weight: 700;
+                    font-weight: normal;
                     padding-top: 10px;
                     padding-bottom: 10px;
 
                     @include media-breakpoint-up(lg) {
                         border-bottom: 1px solid $very-light-gray;
+
+                        &:hover {
+                            font-weight: 700;
+                            background-color: $white;
+                        }
                     }
 
                     &:hover {
@@ -301,8 +349,12 @@
 
 #mainmenu {
 
+    @include media-breakpoint-down(lg) {
+        margin-top: 10px;
+    }
+
     > li {
-        text-transform: uppercase;
+        font-weight: 700;
 
         &.menu-item-has-children {
             display: flex;
