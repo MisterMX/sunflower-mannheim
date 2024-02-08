@@ -1,3 +1,15 @@
+# sunflower Wordpress Theme Mannhem
+
+This is a fork of the original [sunflower](https://github.com/verdigado/sunflower) theme
+that contains custom adjustments for the Mannheim section of the German Green Party.
+
+It mostly changes the look of the footer and the header and contains some
+adjustments to certain block elements.
+The design of this theme is more oriented towards the [website](https://gruene.de)
+of the national section of the German Green Party.
+
+Original readme below:
+
 # sunflower WordPress Theme
 
  This is sunflower, a WordPress-Theme for the german green party. It is based on the starter theme [_s](https://underscores.me/).

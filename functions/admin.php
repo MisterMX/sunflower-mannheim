@@ -15,7 +15,7 @@ add_action( 'admin_bar_menu', 'sunflower_admin_bar', 999 );
 function sunflower_notice() {   ?>
 	<div class="notice notice-info notice-large sunflower-plugins is-dismissible">
 		<p><?php
-            $linkgithub = "<a href='https://github.com/verdigado/sunflower' target='_blank'>open source</a>";
+            $linkgithub = "<a href='https://github.com/mistermx/sunflower-mannheim' target='_blank'>open source</a>";
             $linkverdigado = "<a href='https://www.verdigado.com/' target='_blank' title='verdigado eG'>
                 <img src='" . get_template_directory_uri() . "/assets/img/verdigado-logo.png' alt='Logo of verdigado eG' /></a>";
             /* translators: %1$s and %2$s are replaced with string */
