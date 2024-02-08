@@ -113,7 +113,7 @@ $sunflower_social_media_profiles = get_sunflower_social_media_profiles();
             if ( $sunflower_social_media_profiles ) {
                 ?>
 
-                <div class="col-12 col-md-4 p-2 justify-content-center d-flex">
+                <div class="col-12 justify-content-center d-flex">
                     <?php
                         echo $sunflower_social_media_profiles;
                     ?>
