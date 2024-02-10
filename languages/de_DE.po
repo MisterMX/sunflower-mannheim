@@ -21,7 +21,7 @@ msgid "sunflower"
 msgstr "sunflower"
 
 #. Theme URI of the theme
-msgid "https://sunflower-theme.de"
+msgid "https://github.com/mistermx/sunflower-mannheim"
 msgstr "https://sunflower-theme.de"
 
 #. Description of the theme
@@ -29,11 +29,11 @@ msgid "Theme for the German Green Party"
 msgstr "WordPress Theme für BÜNDNIS 90/DIE GRÜNEN"
 
 #. Author of the theme
-msgid "verdigado eG"
-msgstr "verdigado eG"
+msgid "Maximilian Blatt"
+msgstr "Maximilian Blatt"
 
 #. Author URI of the theme
-msgid "https://verdigado.com"
+msgid "https://github.com/mistermx/sunflower-mannheim"
 msgstr ""
 
 #: 404.php:19
