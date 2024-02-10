@@ -10,6 +10,7 @@
         margin-bottom: 0.5rem !important;
 
         .wp-block-group__inner-container {
+
             > h2 {
                 margin-bottom: 1rem;
             }
@@ -17,28 +18,28 @@
     }
 
     .wp-block-post-title {
+
         font-size: x-large;
-        font-weight: bold;
+        font-weight: 700;
         text-decoration: none;
 
-        a  {
+        a {
             margin-bottom: 1rem;
         }
     }
 
     &.success-list {
+
         .wp-block-post {
             position: relative;
 
-            &:after {
+            &::after {
                 content: "\f00c";
 
                 -moz-osx-font-smoothing: grayscale;
                 -webkit-font-smoothing: antialiased;
-                display: var(--fa-display, inline-block);
                 font-style: normal;
                 font-variant: normal;
-                line-height: 1;
                 text-rendering: auto;
                 font-family: var(--fa-style-family, "Font Awesome 6 Free");
                 font-weight: var(--fa-style, 900);
@@ -59,7 +60,7 @@
 
                 border-radius: 50%;
                 background: var(--wp--preset--color--tanne);
-                color: $white
+                color: $white;
             }
         }
     }

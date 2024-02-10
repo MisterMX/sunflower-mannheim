@@ -203,6 +203,7 @@ body {
         }
 
         .bloginfo-name {
+
             @include media-breakpoint-down(lg) {
                 font-size: small;
             }
@@ -211,9 +212,13 @@ body {
         #mainmenu {
 
             .dropdown-menu {
+
                 ul {
+
                     li {
+
                         a {
+
                             &:hover {
                                 background-color: $white;
                                 font-weight: 700;
@@ -232,6 +237,7 @@ body {
                 margin-right: 5px;
 
                 &.button-primary {
+
                     .nav-link {
                         background-color: var(--wp--preset--color--tanne);
                         border-radius: 3px;
@@ -244,6 +250,7 @@ body {
                             transform: $button-hover-transform;
                         }
                     }
+
                     &:hover {
                         border-color: transparent;
                     }
@@ -255,6 +262,7 @@ body {
             }
 
             @include media-breakpoint-up(md) {
+
                 > .current-menu-item:not(.button-primary) {
                     border-bottom: 3px solid #005437;
                 }
@@ -270,15 +278,21 @@ body {
         }
 
         .navbar-collapse {
+
             #mainmenu {
+
                 > .menu-item {
+
                     &.button-primary {
+
                         @include media-breakpoint-down(lg) {
+
                             &:not(.menu-item-has-children) {
                                 width: 100%;
                                 display: block;
                                 text-align: center;
                             }
+
                             &:last-child {
                                 margin-bottom: 1em;
                             }

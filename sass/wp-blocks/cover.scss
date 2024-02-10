@@ -16,6 +16,7 @@
     }
 
     &.alignfull.with-padding {
+
         > .wp-block-cover__inner-container {
             max-width: 1155px;
         }
@@ -23,6 +24,7 @@
 }
 
 .wp-block-column {
+
     .wp-block-cover {
         overflow: hidden;
         border-radius: $border-radius;

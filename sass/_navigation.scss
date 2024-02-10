@@ -30,16 +30,21 @@
 }
 
 @include media-breakpoint-down(lg) {
+
     .submenu-opener {
+
         i {
             transition: transform 0.2s linear;
         }
+
         &[aria-expanded="true"] {
+
             i {
                 transform: rotate(180deg);
             }
         }
     }
+
     .dropdown-menu {
         display: block;
         max-height: 0;
@@ -251,6 +256,7 @@
                 }
 
                 @include media-breakpoint-down(lg) {
+
                     ul {
                         background-color: map-get($custom-colors, "sand");
                     }
@@ -290,7 +296,7 @@
                 a {
                     font-size: 0.8em;
                     text-transform: none;
-                    font-weight: normal;
+                    font-weight: 400;
                     padding-top: 10px;
                     padding-bottom: 10px;
 

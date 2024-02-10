@@ -1,4 +1,5 @@
 #content {
+
     /* To be used with personal header */
     margin-top: var(--personal-navbar-height);
 
@@ -37,6 +38,7 @@
 }
 
 @include media-breakpoint-down(md) {
+
     .text-md-center {
         text-align: center;
     }
@@ -72,6 +74,7 @@
 .has-border-radius {
     border-radius: $border-radius !important;
 }
+
 .has-border-radius-small {
     border-radius: $border-radius-small !important;
 }

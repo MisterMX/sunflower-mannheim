@@ -3,79 +3,9 @@
     border-radius: $border-radius;
     background: transparent;
 
-    &, figure {
+    &,
+    figure {
         position: relative;
-    }
-
-    &.opacity-0 {
-        a {
-            &:before {
-                opacity: 0;
-            }
-        }
-    }
-    &.opacity-10 {
-        a {
-            &:before {
-                opacity: 0.1;
-            }
-        }
-    }
-    &.opacity-20 {
-        a {
-            &:before {
-                opacity: 0.2;
-            }
-        }
-    }
-    &.opacity-30 {
-        a {
-            &:before {
-                opacity: 0.3;
-            }
-        }
-    }
-    &.opacity-40 {
-        a {
-            &:before {
-                opacity: 0.4;
-            }
-        }
-    }
-    &.opacity-50 {
-        a {
-            &:before {
-                opacity: 0.5;
-            }
-        }
-    }
-    &.opacity-60 {
-        a {
-            &:before {
-                opacity: 0.6;
-            }
-        }
-    }
-    &.opacity-70 {
-        a {
-            &:before {
-                opacity: 0.7;
-            }
-        }
-    }
-    &.opacity-80 {
-        a {
-            &:before {
-                opacity: 0.8;
-            }
-        }
-    }
-    &.opacity-90 {
-        a {
-            &:before {
-                opacity: 0.9;
-            }
-        }
     }
 
     &:not(.is-style-rounded) {
@@ -89,7 +19,7 @@
         display: block;
         outline: 0;
 
-        &:before {
+        &::before {
             content: "";
             position: absolute;
             top: 0;
@@ -101,7 +31,7 @@
             border-radius: $border-radius;
         }
 
-        &:after {
+        &::after {
             content: "";
             position: absolute;
             font-size: $font-size-xlarge;
@@ -131,6 +61,7 @@
     }
 
     @include media-breakpoint-down(lg) {
+
         figcaption {
             font-size: $font-size-large;
         }
@@ -138,6 +69,7 @@
 }
 
 .compact-images {
+
     figcaption {
         font-size: $font-size-large;
     }
@@ -153,7 +85,8 @@
     }
 }
 
-figure.wp-block-image, .wp-block-image > figure {
+figure.wp-block-image,
+.wp-block-image > figure {
     box-shadow: none;
     border-radius: $border-radius;
 
@@ -173,6 +106,7 @@ figure.wp-block-image.has-shadow {
         transform: translateY(0);
     }
 }
+
 figure.wp-block-image.has-shadow-dark {
     transform: translateY(0);
 
@@ -188,7 +122,9 @@ figure.wp-block-image.has-shadow-dark {
 // "bullet-caption" is a special class for images in galleries that only show
 // a number, like for candidates on a list.
 .bullet-caption {
+
     &.wp-block-image {
+
         figcaption {
             width: 1.5em;
             height: 1.5em;

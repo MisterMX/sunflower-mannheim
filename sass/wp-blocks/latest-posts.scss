@@ -1,4 +1,5 @@
 .wp-block-latest-posts__list {
+
     li {
         padding: 1em;
         border-radius: $border-radius;
@@ -7,7 +8,7 @@
 
     .wp-block-latest-posts__post-title {
         font-size: x-large;
-        font-weight: bold;
+        font-weight: 700;
         text-decoration: none;
     }
 }
