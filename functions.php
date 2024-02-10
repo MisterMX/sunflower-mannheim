@@ -11,6 +11,7 @@ require_once 'functions/metaboxes.php';
 require_once 'functions/blocks.php';
 require_once 'functions/blocks/latest-posts.php';
 require_once 'functions/blocks/next-events.php';
+require_once 'functions/blocks/shortcodes.php';
 require_once 'functions/colors.php';
 require_once 'functions/update.php';
 require_once 'functions/widgets.php';
