@@ -15,6 +15,25 @@
     }
 }
 
+@include media-breakpoint-up(md) {
+    .wp-block-columns {
+        &.wrap-md {
+            flex-wrap: wrap !important;
+
+            &.wrap-4 {
+                > .wp-block-column {
+                    flex-basis: 25%;
+                }
+            }
+            &.wrap-3 {
+                > .wp-block-column {
+                    flex-basis: 33.33%;
+                }
+            }
+        }
+    }
+}
+
 @include media-breakpoint-up(sm) {
 
     .same-height {

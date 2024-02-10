@@ -25,3 +25,17 @@
 
     margin-bottom: 1.5em;
 }
+
+.flex-basis-full {
+    flex-basis: 100% !important;
+}
+
+.flex-centered-vertically {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hyphens-none {
+    hyphens: none !important;
+}

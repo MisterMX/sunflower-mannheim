@@ -69,31 +69,9 @@
     margin: auto;
 }
 
-.wp-block-columns {
-    @include media-breakpoint-up(md) {
-        &.wrap-md {
-            flex-wrap: wrap !important;
-
-            &.wrap-4 {
-                > .wp-block-column {
-                    flex-basis: 25%;
-                }
-            }
-            &.wrap-3 {
-                > .wp-block-column {
-                    flex-basis: 33.33%;
-                }
-            }
-        }
-    }
+.has-border-radius {
+    border-radius: $border-radius !important;
 }
-
-.flex-basis-full {
-    flex-basis: 100% !important;
-}
-
-.flex-centered-vertically {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.has-border-radius-small {
+    border-radius: $border-radius-small !important;
 }
