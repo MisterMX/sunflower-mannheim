@@ -20,8 +20,8 @@ services:
     image: wordpress:php7.4
     restart: unless-stopped
     ports:
-      - 127.0.0.1:80:80
-      - 127.0.0.1:443:443
+      - 127.0.0.1:8080:80
+      - 127.0.0.1:8443:443
     networks:
       - default
     volumes:
@@ -41,4 +41,4 @@ volumes:
   mariadb_data:
 
 networks:
-  default: 
+  default:

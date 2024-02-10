@@ -35,10 +35,14 @@ $sidebar-color: #afafaf;
 
 $lightgreen: #e5f3eb;
 $darkgreen: #002216;
-$very-dark-green: #072415;
+$verydarkgreen: #072415;
 
-$border-radius: 3px;
+$border-radius: 0.5rem;
 $border-radius-small: 1px;
+
+$button-hover-box-shadow: 0 1px 20px rgba(0, 84, 55, 0.5);
+$button-hover-transform: translateY(-0.2rem);
+$button-hover-transition: box-shadow linear 0.1s, transform linear 0.1s;
 
 $container-max-widths: (
     sm: 540px,
@@ -47,4 +51,6 @@ $container-max-widths: (
     xl: 1200px) !default;
 
 $font-size-base: 1.1875rem;
+$font-size-xlarge: 2.5em;
+$font-size-large: 1.5em;
 $small-font-size: 15px;

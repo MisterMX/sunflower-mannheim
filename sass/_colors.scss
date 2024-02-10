@@ -6,6 +6,15 @@
     background-color: $darkgreen;
 }
 
+.has-sunflower-background-image {
+    border-radius: 0.5rem;
+    background: url("assets/img/sunflower.svg");
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-size: 200px;
+    background-position-x: calc(100% + 100px);
+    background-position-y: -100px;
+}
 
 @each $name, $code in $custom-colors {
     .has-#{$name}-color {

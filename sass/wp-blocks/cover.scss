@@ -14,6 +14,13 @@
     .wp-block-cover__inner-container {
         max-width: map-get($container-max-widths, "xl");
     }
+
+    &.alignfull.with-padding {
+
+        > .wp-block-cover__inner-container {
+            max-width: 1155px;
+        }
+    }
 }
 
 .wp-block-column {

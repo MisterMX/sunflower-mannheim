@@ -1,12 +1,20 @@
 <?php /* must be outside of masthead for stickness */ ?>
-	<div id="navbar-sticky-detector" class="header-personal"></div>
-	<nav class="navbar navbar-main navbar-expand-lg navbar-light bg-white header-personal">
+	<!-- <div id="navbar-sticky-detector" class="header-personal"></div> -->
+	<nav class="navbar navbar-main navbar-expand-lg navbar-light bg-white header-personal stuck">
 		<div class="container">
 			<div class="d-flex w-100">
 			<div class="container d-flex align-items-center bloginfo">
-				<a class="img-container" href="<?php echo get_home_url(); ?>">
-					<img src="<?php echo sunflower_parent_or_child( 'assets/img/sunflower.svg' ); ?>" class="" alt="Sonnenblume - Logo">
-				</a>
+				<div class="img-container">
+					<?php
+					if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+						the_custom_logo();
+					} else {
+						echo '<a href="' . get_home_url() . '">';
+							printf( '<img src="%s" class="" alt="Logo">', sunflower_parent_or_child( 'assets/img/sunflower.svg' ) );
+						echo '</a>';
+					}
+					?>
+				</div>
 				<div>
 					<div class="h5 bloginfo-name">
 						<?php bloginfo( 'name' ); ?>
@@ -18,8 +26,10 @@
 			</div>
 
 			<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu-container" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle navigation">
-				<i class="fas fa-times close"></i>
-				<i class="fas fa-bars open"></i>
+                <?php
+                    printf( '<img src="%s" class="close">', sunflower_parent_or_child( 'assets/img/menu-times.svg' ) );
+                    printf( '<img src="%s" class="open">', sunflower_parent_or_child( 'assets/img/menu-bars.svg' ) );
+                ?>
 			</button>
 
 			</div>
@@ -40,7 +50,7 @@
 				?>
 			</div>
 
-			<div class="social-media-profiles d-none d-md-flex">
+			<div class="social-media-profiles d-none d-lg-flex">
 				<?php
 					echo get_sunflower_social_media_profiles();
 				?>
@@ -51,11 +61,11 @@
 	<script>
 		jQuery(document).ready( function (){
 			jQuery('.navbar-toggler').click(function(){
-				if(jQuery('.navbar-toggler').hasClass('collapsed')){
+				if(jQuery('.navbar-toggler').hasClass('collapsed')) {
 					window.setTimeout(() => {
                         jQuery('body').removeClass('navbar-open');
 					}, 100);
-				}else{
+				} else{
                     jQuery('body').addClass('navbar-open');
 				}
 			})

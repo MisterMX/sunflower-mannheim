@@ -17,7 +17,8 @@
 }
 
 .site-footer {
-    background-color: $very-dark-green;
+
+    background-color: $darkgreen;
     color: $white;
     padding: 50px 0;
 
@@ -54,5 +55,73 @@
 
     a {
         color: $white-90;
+    }
+
+    .menu-container {
+        display: flex;
+        justify-content: space-between;
+
+        .menu {
+            display: flex;
+            justify-content: center;
+
+            .menu-title {
+
+                @include media-breakpoint-down(md) {
+                    text-align: center;
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+                margin-bottom: 1em;
+            }
+        }
+    }
+
+    .social-media-profile {
+        background: transparent;
+        font-size: xx-large;
+
+        i {
+            color: $white;
+        }
+    }
+
+    nav {
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            .menu-item {
+                list-style: none;
+
+                @include media-breakpoint-down(md) {
+                    display: flex;
+                    justify-content: space-evenly;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+    .menu-bottom {
+        margin: 1em 0;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+    }
+
+    .logo {
+        max-width: 200px;
+
+        @include media-breakpoint-down(lg) {
+            align-self: center;
+            margin-top: 1em;
+        }
     }
 }

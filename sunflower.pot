@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sunflower 2.0.4\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/sunflower\n"
+"Report-Msgid-Bugs-To: https://github.com/mistermx/sunflower-mannheim\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgid "Theme for the German Green Party"
 msgstr ""
 
 #. Author of the theme
-msgid "Maximilian Blatt"
+msgid "verdigado eG"
 msgstr ""
 
 #. Author URI of the theme

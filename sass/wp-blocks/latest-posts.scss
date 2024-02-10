@@ -1,0 +1,14 @@
+.wp-block-latest-posts__list {
+
+    li {
+        padding: 1em;
+        border-radius: $border-radius;
+        box-shadow: 0 1px 20px rgba(0, 84, 55, 0.09);
+    }
+
+    .wp-block-latest-posts__post-title {
+        font-size: x-large;
+        font-weight: 700;
+        text-decoration: none;
+    }
+}

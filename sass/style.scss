@@ -4,14 +4,14 @@ Theme URI: https://sunflower-theme.de
 Author: verdigado eG
 Author URI: https://verdigado.com
 Description: Theme for the German Green Party
-Version: 2.0.4
+Version: 2.0.6
 Tested up to: 6.4
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: sunflower
 Tags: Bündnis 90 / Die Grünen
-Update URI: https://sunflower-theme.de/updateserver/
+Update URI: https://github.com/mistermx/sunflower-mannheim
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned.
@@ -152,4 +152,6 @@ $fa-font-path : "assets/vndr/@fortawesome/fontawesome-free/webfonts";
 @import "wp-blocks/pullquote";
 @import "wp-blocks/styled-layout";
 @import "wp-blocks/table";
+@import "wp-blocks/latest-posts";
+@import "wp-blocks/posts";
 @import "accordion";

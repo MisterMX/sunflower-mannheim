@@ -36,6 +36,10 @@ header {
             height: 33px;
         }
     }
+
+    .container {
+        position: relative;
+    }
 }
 
 .nav {
@@ -148,6 +152,14 @@ body {
     }
 }
 
+:root {
+    --personal-navbar-height: 5em;
+
+    @include media-breakpoint-down(lg) {
+        --personal-navbar-height: 55px;
+    }
+}
+
 .header {
 
     &-personal {
@@ -155,10 +167,67 @@ body {
         .bloginfo {
             background: none;
             padding: 0;
+            height: var(--personal-navbar-height);
+
+            .img-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: calc(var(--personal-navbar-height) + 0.5em);
+                width: calc(var(--personal-navbar-height) + 0.5em);
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                background-color: $verydarkgreen;
+
+                a {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    outline: 0;
+
+                    img {
+                        margin: 10px;
+                        // width: 100%;
+                    }
+                }
+
+            }
+
+            > :nth-child(2) {
+                margin-left: calc(var(--personal-navbar-height) + 1.5em);
+            }
         }
 
+        .bloginfo-name {
+
+            @include media-breakpoint-down(lg) {
+                font-size: small;
+            }
+        }
 
         #mainmenu {
+
+            .dropdown-menu {
+
+                ul {
+
+                    li {
+
+                        a {
+
+                            &:hover {
+                                background-color: $white;
+                                font-weight: 700;
+                                color: $black;
+                            }
+                        }
+                    }
+                }
+            }
 
             > .menu-item {
                 display: flex;
@@ -167,21 +236,35 @@ body {
                 padding-right: 5px;
                 margin-right: 5px;
 
-                @include media-breakpoint-up(md) {
+                &.button-primary {
+
+                    .nav-link {
+                        background-color: var(--wp--preset--color--tanne);
+                        border-radius: 3px;
+                        color: $white;
+                        padding: 0.8em;
+                        transition: $button-hover-transition;
+
+                        &:hover {
+                            box-shadow: $button-hover-box-shadow;
+                            transform: $button-hover-transform;
+                        }
+                    }
+
+                    &:hover {
+                        border-color: transparent;
+                    }
+                }
+
+                @include media-breakpoint-up(lg) {
                     height: 5em;
                 }
             }
 
-            > .current-menu-item {
-                background-color: $primary;
+            @include media-breakpoint-up(md) {
 
-                a.nav-link {
-                    color: $white;
-                    border: 1px !important;
-
-                    &:hover {
-                        color: $primary;
-                    }
+                > .current-menu-item:not(.button-primary) {
+                    border-bottom: 3px solid #005437;
                 }
             }
 
@@ -190,6 +273,31 @@ body {
 
                 @include media-breakpoint-up(md) {
                     flex-wrap: nowrap;
+                }
+            }
+        }
+
+        .navbar-collapse {
+
+            #mainmenu {
+
+                > .menu-item {
+
+                    &.button-primary {
+
+                        @include media-breakpoint-down(lg) {
+
+                            &:not(.menu-item-has-children) {
+                                width: 100%;
+                                display: block;
+                                text-align: center;
+                            }
+
+                            &:last-child {
+                                margin-bottom: 1em;
+                            }
+                        }
+                    }
                 }
             }
         }

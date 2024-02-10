@@ -1,6 +1,12 @@
 .wp-block-image {
     margin-bottom: 0;
     border-radius: $border-radius;
+    background: transparent;
+
+    &,
+    figure {
+        position: relative;
+    }
 
     &:not(.is-style-rounded) {
 
@@ -9,14 +15,137 @@
         }
     }
 
+    a {
+        display: block;
+        outline: 0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $black;
+            opacity: 0;
+            border-radius: $border-radius;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            font-size: $font-size-xlarge;
+            right: 1em;
+            bottom: 1em;
+            width: 32px;
+            height: 20px;
+            background-color: $white;
+            -webkit-mask-image: url("assets/img/arrow-right.svg");
+            mask-image: url("assets/img/arrow-right.svg");
+        }
+    }
+
     figcaption {
-        position: relative;
-        width: unset;
-        color: inherit;
-        text-align: right;
-        font-size: $small-font-size;
+        position: absolute;
+        margin: 0;
+        left: 1em;
+        bottom: 1em;
+        max-width: 70%;
+
+        color: $white;
+        font-size: $font-size-xlarge;
+        font-family: GrueneType;
         background: none;
-        margin-right: 0.3em;
-        margin-top: 0.5em;
+
+        pointer-events: none;
+    }
+
+    @include media-breakpoint-down(lg) {
+
+        figcaption {
+            font-size: $font-size-large;
+        }
+    }
+}
+
+.compact-images {
+
+    figcaption {
+        font-size: $font-size-large;
+    }
+}
+
+.wp-block-image {
+    transition: 0.1s linear;
+    transform: translateY(0);
+
+    &:hover {
+        box-shadow: 0 1px 20px rgba(0, 84, 55, 0.5);
+        transform: translateY(-0.2rem);
+    }
+}
+
+figure.wp-block-image,
+.wp-block-image > figure {
+    box-shadow: none;
+    border-radius: $border-radius;
+
+    &:hover {
+        box-shadow: 0 1px 20px rgba(0, 84, 55, 0.5);
+    }
+}
+
+figure.wp-block-image.has-shadow {
+    transform: translateY(0);
+
+    box-shadow: 0 1px 20px rgba(0, 84, 55, 0.5);
+    border-radius: $border-radius;
+
+    &:hover {
+        box-shadow: 0 1px 20px rgba(0, 84, 55, 0.5);
+        transform: translateY(0);
+    }
+}
+
+figure.wp-block-image.has-shadow-dark {
+    transform: translateY(0);
+
+    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.5);
+    border-radius: $border-radius;
+
+    &:hover {
+        box-shadow: 0 1px 20px rgba(0, 0, 0, 0.5);
+        transform: translateY(0);
+    }
+}
+
+// "bullet-caption" is a special class for images in galleries that only show
+// a number, like for candidates on a list.
+.bullet-caption {
+
+    &.wp-block-image {
+
+        figcaption {
+            width: 1.5em;
+            height: 1.5em;
+            left: 0.5em;
+            bottom: 0.5em;
+
+            line-height: 1.5;
+            border-radius: 50%;
+            font-size: 2em;
+            text-align: center;
+
+            background-color: var(--wp--preset--color--tanne);
+            color: $white;
+
+            // &:before {
+            //     content: "";
+            //     width: 100%;
+            //     height: 100%;
+            //     background-color: map-get($custom-colors, "sonne");
+            //     transform: skew(20deg);
+            // }
+        }
     }
 }

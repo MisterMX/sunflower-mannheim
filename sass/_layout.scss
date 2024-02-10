@@ -12,6 +12,15 @@ body {
     }
 }
 
+p {
+    text-align: justify;
+}
+
+.text-justify {
+    text-align: justify !important;
+    hyphens: auto !important;
+}
+
 .container-narrow {
     max-width: 900px;
 }

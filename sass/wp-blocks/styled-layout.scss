@@ -1,4 +1,6 @@
 .styled-layout {
+    width: 100%;
+    max-width: 100%;
 
     .wp-block-group {
         padding: 100px 10px;
@@ -10,6 +12,16 @@
 
     .site-main {
         margin-bottom: 0;
+    }
+
+    > .row {
+
+        > .col-12 {
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 }
 
