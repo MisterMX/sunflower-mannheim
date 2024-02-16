@@ -43,3 +43,16 @@ function shortcode_sunflower_mailto_link( $atts ) {
     return $result;
 }
 add_shortcode( 'sunflower_mailto_link', 'shortcode_sunflower_mailto_link' );
+
+function shortcode_sunflower_icon( $atts ) {
+    $attributes = shortcode_atts( array(
+        "class" => "d-flex align-items-center justify-content-center",
+        "icon" => ""
+	), $atts );
+
+    $class = sprintf("d-flex align-items-center justify-content-center %s", $attributes["class"]);
+
+    $result = sprintf("<p class=\"%s\"><i class=\"%s\"></i></p>", $class, $attributes["icon"]);
+    return $result;
+}
+add_shortcode( 'sunflower_icon', 'shortcode_sunflower_icon' );
