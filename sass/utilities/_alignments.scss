@@ -30,6 +30,17 @@
     flex-basis: 100% !important;
 }
 
+.flex-basis-half {
+    flex-basis: 50% !important;
+}
+
+.is-layout-flex {
+
+    > .flex-basis-half {
+        flex-basis: calc(50% - 0.5em) !important;
+    }
+}
+
 .flex-centered-vertically {
     display: flex;
     flex-direction: column;

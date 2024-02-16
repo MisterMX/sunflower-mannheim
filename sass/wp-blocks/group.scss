@@ -1,32 +1,35 @@
-.wp-block-group {
+.styled-layout {
 
-    padding: 0;
+    .wp-block-group {
 
-    &.has-background {
-        width: 100vw;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-        display: flex;
-        justify-content: center;
+        padding: 0;
 
-        .wp-block-group__inner-container {
-            max-width: 100%;
-        }
-
-        @include media-breakpoint-up(md) {
+        &.has-background {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            display: flex;
+            justify-content: center;
 
             .wp-block-group__inner-container {
-                max-width: 1155px;
+                max-width: 100%;
             }
+
+            @include media-breakpoint-up(md) {
+
+                .wp-block-group__inner-container {
+                    max-width: 1155px;
+                }
+            }
+
         }
 
-    }
-
-    &__inner-container {
-        max-width: map-get($container-max-widths, "xl");
+        &__inner-container {
+            max-width: map-get($container-max-widths, "xl");
+        }
     }
 }
 
