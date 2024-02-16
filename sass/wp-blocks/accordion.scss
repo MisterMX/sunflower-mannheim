@@ -1,0 +1,46 @@
+.wp-block-sunflower-accordion {
+
+    .accordion-item {
+        border-radius: $border-radius;
+        border-width: 0px;
+        box-shadow: none;
+        transform: none;
+        transition: box-shadow 0.1s linear, transform 0.1s linear;
+
+        &:hover {
+            box-shadow: $button-hover-box-shadow;
+            transform: $button-hover-transform;
+
+            .accordion-header {
+
+                .accordion-button {
+                    background-color: $sand-dark;
+                }
+            }
+        }
+
+        .accordion-header {
+            background-color: $sand-dark;
+            border-width: 0px;
+            border-radius: $border-radius;
+
+            .accordion-button {
+                background-color: $sand-dark;
+                font-family: "GrueneType";
+                font-weight: 700;
+                font-size: $font-size-medium;
+                color: $secondary;
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+
+        .accordion-collapse {
+            background-color: $white;
+            border-width: 0px;
+            border-radius: 0 0 $border-radius $border-radius;
+        }
+    }
+}
