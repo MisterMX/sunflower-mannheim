@@ -1,23 +1,8 @@
-.entry-content > .wp-block-cover {
+.styled-layout {
 
-    @include themed() {
-        font-family: t("headingFontBold");
-    }
+    .wp-block-cover {
 
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-
-    .wp-block-cover__inner-container {
-        max-width: map-get($container-max-widths, "xl");
-    }
-
-    &.alignfull.with-padding {
-
-        > .wp-block-cover__inner-container {
+        .wp-block-cover__inner-container {
             max-width: 1155px;
         }
     }
