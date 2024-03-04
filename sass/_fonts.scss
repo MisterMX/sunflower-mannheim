@@ -81,3 +81,9 @@
     font-family: BereitBold !important;
     font-weight: 500;
 }
+
+@include media-breakpoint-down(md) {
+    .fs-md-3 {
+        font-size: $h3-font-size !important;
+    }
+}
