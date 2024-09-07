@@ -11,10 +11,6 @@ h6,
 .h5,
 .h6 {
 
-    a {
-        text-decoration: none;
-    }
-
     word-break: break-word;
 }
 
@@ -73,7 +69,15 @@ h3,
 
     font-weight: 700;
     font-size: 25px;
-    color: $primary;
+}
+
+.has-white-background-color {
+
+    .h1,
+    .h2,
+    .h3 {
+        color: $secondary;
+    }
 }
 
 h4,
@@ -102,7 +106,7 @@ h6,
 .h6 {
 
     @include themed() {
-        font-family: t("headingFont");
+        font-family: t("standardFont");
     }
 
     font-weight: 700;
