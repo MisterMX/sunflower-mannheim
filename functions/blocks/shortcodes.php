@@ -1,6 +1,6 @@
 <?php
 
-function sunflower_social_media_icons_func( $atts ) {
+function shortcode_sunflower_social_media_icons_func( $atts ) {
     $attributes = shortcode_atts( array(
 		'wrapper_element' => "p",
 		'wrapper_class' => "has-medium-font-size is-layout-flex justify-content-around",
@@ -27,4 +27,32 @@ function sunflower_social_media_icons_func( $atts ) {
     $result .= sprintf("</%s>", $attributes['wrapper_element']);
     return $result;
 }
-add_shortcode( 'sunflower_social_media_icons', 'sunflower_social_media_icons_func' );
+add_shortcode( 'sunflower_social_media_icons', 'shortcode_sunflower_social_media_icons_func' );
+
+function shortcode_sunflower_mailto_link( $atts ) {
+    $attributes = shortcode_atts( array(
+		'mailto' => "",
+        "class" => "",
+        "a_class" => "",
+        "icon_class" => "mr-1 fa-solid fa-envelope"
+	), $atts );
+
+    $a_class = sprintf("d-flex gap-1 align-items-center text-decoration-none %s", $attributes["a_class"]);
+
+    $result = sprintf("<p class=\"%s\"><a class=\"%s\" href=\"mailto:%s\"><i class=\"%s\"></i>%s</a></p>", $attributes["class"], $a_class, $attributes["mailto"], $attributes["icon_class"], $attributes["mailto"]);
+    return $result;
+}
+add_shortcode( 'sunflower_mailto_link', 'shortcode_sunflower_mailto_link' );
+
+function shortcode_sunflower_icon( $atts ) {
+    $attributes = shortcode_atts( array(
+        "class" => "d-flex align-items-center justify-content-center",
+        "icon" => ""
+	), $atts );
+
+    $class = sprintf("d-flex align-items-center justify-content-center %s", $attributes["class"]);
+
+    $result = sprintf("<p class=\"%s\"><i class=\"%s\"></i></p>", $class, $attributes["icon"]);
+    return $result;
+}
+add_shortcode( 'sunflower_icon', 'shortcode_sunflower_icon' );

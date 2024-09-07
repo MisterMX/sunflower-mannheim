@@ -301,7 +301,10 @@
                     padding-bottom: 10px;
 
                     @include media-breakpoint-up(lg) {
-                        border-bottom: 1px solid $very-light-gray;
+
+                        &:not(:last-child) {
+                            border-bottom: 1px solid $very-light-gray;
+                        }
 
                         &:hover {
                             font-weight: 700;

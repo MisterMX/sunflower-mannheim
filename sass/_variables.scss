@@ -30,6 +30,8 @@ $darkgray: #333;
 $lightgray: #aeb2ad;
 $very-light-gray: #d6d9d6;
 
+$sand-dark: rgb(247, 244, 237/1);
+
 $body-color: #201d1b;
 $sidebar-color: #afafaf;
 
@@ -51,6 +53,7 @@ $container-max-widths: (
     xl: 1200px) !default;
 
 $font-size-base: 1.1875rem;
+$font-size-medium: 1.2em;
 $font-size-xlarge: 2.5em;
 $font-size-large: 1.5em;
 $small-font-size: 15px;
