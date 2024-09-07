@@ -2,18 +2,23 @@ a.event-card {
     color: $body-color !important;
     text-decoration: none;
 
-
     article {
         background-color: $white;
         border-radius: $border-radius;
         height: 100%;
 
+        h2 {
+            color: $secondary;
+        }
+
         .event-archive-meta {
-            color: $primary;
+            color: $darkgray;
 
             @include themed() {
-                font-family: t("headingFont");
+                font-family: t("standardFont");
             }
+
+            border-bottom: 1px solid $lightgray;
         }
 
         &:hover {
@@ -32,15 +37,6 @@ a.event-card {
             font-weight: 700;
             font-size: 25px;
         }
-    }
-
-    &:visited {
-        color: $black;
-        text-decoration: none;
-    }
-
-    &:hover {
-        text-decoration: none;
     }
 }
 
