@@ -292,6 +292,7 @@ class SunflowerSettingsPage {
 		$options = array(
 			array( 'standard', __( 'Standard', 'sunflower' ) ),
 			array( 'personal', __( 'Personal', 'sunflower' ) ),
+			array( 'mannheim', __( 'Mannheim', 'sunflower' ) ),
 		);
 		foreach ( $options as $option ) {
 			$selected = ( isset( $this->options['sunflower_header_layout'] ) && $this->options['sunflower_header_layout'] === $option[0] ) ? 'selected' : '';

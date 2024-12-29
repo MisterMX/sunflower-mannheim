@@ -5,7 +5,7 @@
  * Contains the closing of the #content div and all content after.
  * php version 7.4.11
  *
- * @category Sunflower
+ * @category Sunflower Mannheim
  * @package  Sunflower
  * @author   Tom Rose <mail@tom-rose.de>
  * @license  GNU General Public License 3 https://www.gnu.org/licenses/gpl-3.0.html
@@ -22,7 +22,7 @@ $sunflower_social_media_profiles = sunflower_get_social_media_profiles();
 			<?php
 			if ( has_nav_menu( 'footer1' ) || has_nav_menu( 'footer2' ) || $sunflower_social_media_profiles ) {
 				?>
-				<div class="row">
+				<div class="row justify-content-start">
 					<div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-start">
 
 						<nav class="navbar navbar-top navbar-expand-md ">
@@ -45,11 +45,6 @@ $sunflower_social_media_profiles = sunflower_get_social_media_profiles();
 						</nav>
 					</div>
 					<div class="col-12 col-md-4 p-2 justify-content-center d-flex">
-				<?php
-				echo wp_kses_post( $sunflower_social_media_profiles );
-				?>
-					</div>
-					<div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
 						<nav class="navbar navbar-top navbar-expand-md">
 							<div class="text-center">
 							<?php
@@ -68,6 +63,34 @@ $sunflower_social_media_profiles = sunflower_get_social_media_profiles();
 							?>
 							</div>
 						</nav>
+					</div>
+					<div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
+						<nav class="navbar navbar-top navbar-expand-md">
+							<div class="text-center">
+							<?php
+								wp_nav_menu(
+									array(
+										'theme_location' => 'footer3',
+										'menu_id'        => 'footer3',
+										'depth'          => 1,
+										// 1 = no dropdowns, 2 = with dropdowns.
+										'container'      => false,
+										'menu_class'     => 'navbar-nav small',
+										'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
+										'walker'         => new WP_Bootstrap_Navwalker(),
+									)
+								);
+							?>
+							</div>
+						</nav>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-12 mt-4 mb-4 d-flex flex-row justify-content-center">
+						<?php
+						echo wp_kses_post( $sunflower_social_media_profiles );
+						?>
 					</div>
 				</div>
 

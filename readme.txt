@@ -6,7 +6,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 Requires at least: 6.2
 Tested up to: 6.3
 Requires PHP: 8.2
-Stable tag: 2.1.0
+Stable tag: 2.2.0-8-g46aee93
 License: GNU General Public License v2 or later
 License URI: LICENSE
 

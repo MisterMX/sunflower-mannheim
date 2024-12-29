@@ -1,0 +1,299 @@
+.header-mannheim {
+    width: 100%;
+
+    .navbar {
+        margin-left: 100px;
+        height: 100px;
+        background-color: #f9f9f9;
+        color: &darkgreen;
+        position: static;
+
+        .navbar-collapse {
+            height: 100%;
+        }
+    }
+
+    .navbar-nav {
+        height: 100%;
+        width: 100%;
+        padding-right: 100px;
+        padding-left: 50px;
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            color: $black;
+            text-transform: none !important;
+            font-weight: 700;
+            font-size: 1.125rem;
+            line-height: 1.55;
+
+            &.gap {
+                flex-grow: 1;
+                > * {
+                    display: none;
+                }
+            }
+
+            &.depth-0 {
+                height: 100%;
+            }
+
+            &:not(.button-primary) {
+
+                --mark-color: #{map-get($custom-colors, "sonne")};
+                --mark-height: 0.8em;
+                --mark-skew: calc(var(--mark-height) / 100* 22.5);
+                --mark-overlap: 0.3em;
+
+                margin-inline: calc(var(--mark-overlap)* -1);
+                padding-inline: var(--mark-overlap);
+                margin-left: 1rem;
+                margin-right: 1rem;
+
+                &:hover {
+                    > a {
+                        background-color: transparent;
+                        background-image: linear-gradient(to bottom right, transparent 0 50%, var(--mark-color) 50% 100%), linear-gradient(var(--mark-color), var(--mark-color)), linear-gradient(to top left, transparent 50%, var(--mark-color) 50%);
+                        background-size: calc(var(--mark-skew)) calc(var(--mark-height)), calc(100% - var(--mark-skew)* 2 + .5px) var(--mark-height), calc(var(--mark-skew)) var(--mark-height);
+                        background-position: 0 100%,bottom,100% 100%;
+                        background-repeat: no-repeat;
+                        color: $darkgreen;
+                        -webkit-box-decoration-break: clone;
+                        box-decoration-break: clone;
+                    }
+                }
+            }
+
+            @include themed() {
+                font-family: t(standardFont);
+            }
+
+            > a {
+                color: $black;
+
+                &:visited {
+                    color: $black;
+                }
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
+            .toggle {
+                display: none;
+            }
+
+            &.depth-0 {
+
+                .dropdown-menu-container {
+
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    z-index: -5;
+                    opacity: 0;
+                    transition: opacity 0.1s linear;
+                    min-height: 80vh;
+                    pointer-events: none;
+                    display: flex;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        // bottom: 0;
+                        // width: 100vw;
+                        // max-width: 1440px;
+                        height: 100vh;
+                        background-color: rgba(0, 0, 0, 0.75);
+                        z-index: -5;
+                    }
+
+
+                    .bg-img {
+                        flex-shrink: 0;
+                        background-color: map-get($custom-colors, "klee");
+                        width: 200px;
+                    }
+
+                    .menu {
+                        color: map-get($custom-colors, "tanne");
+                        background-color: #f9f9f9;
+                        list-style: none;
+                        flex-grow: 1;
+                        padding-top: 100px;
+                        position: relative;
+
+                        .menu-item {
+                        }
+                    }
+
+                    .nav-item {
+                    }
+
+                    .nav-item-desc {
+                        font-size: 13px;
+                        color: map-get($custom-colors, "tanne");
+                    }
+                }
+
+                .submenu {
+                    background-color: #eeeeee;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 66.666666%;
+                    bottom: 0;
+                    margin: 0;
+
+                    .menu {
+                        background: none;
+                    }
+
+                    .menu-item {
+                        font-weight: normal;
+                        font-size: 16px;
+                        padding: 10px;
+                        // color: map-get($custom-colors, "tanne");
+                        // background: none;
+
+                        &:not(:last-child) {
+                            border-bottom: 1px solid $lightgray;
+                        }
+
+                        a {
+                            --mark-overlap: 0.3em;
+                            margin-inline: calc(var(--mark-overlap)* -1);
+                            padding-inline: var(--mark-overlap);
+                            line-height: 24px;
+                            color: map-get($custom-colors, "tanne");
+                        }
+                    }
+                }
+
+                &:hover {
+
+                    .dropdown-menu-container {
+                        opacity: 1;
+                        pointer-events: all;
+                    }
+                }
+            }
+
+            .nav-item-description {
+                font-size: 13px;
+                font-weight: normal;
+            }
+
+            &.has-image {
+                display: flex !important;
+                gap: 1rem;
+                padding: 0.5rem;
+
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    width: 3.5em;
+                    height: 3.5em;
+                    background-size: cover;
+                }
+            }
+
+            &.prefix-arrow-right {
+                font-weight: normal;
+                font-size: 15px;
+                text-decoration: underline;
+
+                &::before {
+                    display: inline-block;
+                    content: '';
+                    -webkit-mask: url("assets/img/arrow-right.svg") no-repeat 50% 50%;
+                    mask: url("assets/img/arrow-right.svg") no-repeat 50% 50%;
+                    -webkit-mask-size: contain;
+                    mask-size: contain;
+
+                    width: 1em;
+                    height: 1em;
+                    margin-right: 2px;
+                    vertical-align: middle;
+                    background-color: $black;
+                }
+            }
+
+            &.button-primary {
+                a {
+                    cursor: pointer;
+                    font-size: 1rem;
+                    line-height: 1.5rem;
+                    font-weight: 700;
+                    padding: .75rem 1.5rem;
+                    border-radius: 9999px;
+
+                    width: 100%;
+                    max-width: -moz-fit-content;
+                    max-width: fit-content;
+                    align-items: center;
+                    justify-content: center;
+                    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+                    transition-timing-function: cubic-bezier(.4,0,.2,1);
+                    transition-duration: .3s;
+                    // --tw-bg-opacity: 1;
+                    // background-color: rgb(0 84 55 / var(--tw-bg-opacity));
+                    // fill: #fff;
+                    // --tw-text-opacity: 1;
+
+                    background-color: map-get($custom-colors, "tanne");
+                    color: $white;
+
+                    &:hover {
+                        background-color: $button-hover;
+                        color: $black;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .nav-item-heading {
+            margin-top: 1rem;
+            font-weight: normal;
+            color: $darkgray;
+            font-size: 13px;
+            // color: map-get($custom-colors, "tanne");
+        }
+    }
+
+    .img-container {
+        height: 100px;
+        width: 100px;
+        padding: 0;
+        display: flex;
+        flex-shrink: 0;
+        //background-color: $darkgreen;
+        background-color: map-get($custom-colors, "tanne");
+
+        transition: filter 0.1s linear;
+
+        img {
+            width: 56px;
+            margin: auto;
+        }
+
+        &:hover {
+            background-color: rgb(0 67 44);
+        }
+    }
+}
+
+@include media-breakpoint-up(xxl) {
+    .header-mannheim {
+        width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

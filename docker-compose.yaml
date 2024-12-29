@@ -2,7 +2,7 @@ version: '3.2'
 
 services:
   mariadb:
-    image: mariadb
+    image: mariadb:11
     restart: unless-stopped
     volumes:
       - mariadb_data:/var/lib/mysql
@@ -17,11 +17,11 @@ services:
   wp:
     depends_on:
       - mariadb
-    image: wordpress:php7.4
+    image: wordpress:php8.3
     restart: unless-stopped
     ports:
-      - 127.0.0.1:80:80
-      - 127.0.0.1:443:443
+      - 127.0.0.1:8080:80
+      - 127.0.0.1:8443:443
     networks:
       - default
     volumes:
@@ -40,5 +40,6 @@ services:
 volumes:
   mariadb_data:
 
-networks:
-  default: 
+# networks:
+#   default:
+#     driver: host

@@ -1,17 +1,16 @@
 /*!
-Theme Name: sunflower
-Theme URI: https://sunflower-theme.de
+Theme Name: sunflower-mannheim
+Theme URI: https://github.com/mistermx/sunflower-mannheim
 Author: verdigado eG
 Author URI: https://verdigado.com
 Description: Theme for the German Green Party
-Version: 2.2.0
+Version: 2.2.0-8-g46aee93
 Tested up to: 6.6
 Requires PHP: 8.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: sunflower
+Text Domain: sunflower mannheim
 Tags: Bündnis 90 / Die Grünen
-Update URI: https://sunflower-theme.de/updateserver/
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned.
@@ -154,3 +153,6 @@ $fa-font-path : "assets/vndr/@fortawesome/fontawesome-free/webfonts";
 @import "wp-blocks/styled-layout";
 @import "wp-blocks/table";
 @import "accordion";
+
+// Import custom mannheim layout
+@import "layouts/mannheim/mannheim";

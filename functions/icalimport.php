@@ -8,7 +8,7 @@
 /**
  * Load class namespaces.
  */
-require WP_CONTENT_DIR . '/themes/sunflower/lib/vendor/autoload.php';
+require __DIR__ . '/../lib/vendor/autoload.php';
 
 use Sabre\VObject\ParseException;
 use Sabre\VObject\Reader;

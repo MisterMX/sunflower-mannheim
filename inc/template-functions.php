@@ -22,6 +22,13 @@ function sunflower_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 
+	// Add a class to the body to indicate the page should have the
+	// special mannheim layout
+	$sunflower_header_layout = sunflower_get_setting( 'sunflower_header_layout' );
+	if ( $sunflower_header_layout == 'mannheim' ) {
+		$classes[] = 'layout-mannheim';
+	}
+
 	return $classes;
 }
 

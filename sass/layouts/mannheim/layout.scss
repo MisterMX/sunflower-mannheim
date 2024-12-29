@@ -1,0 +1,60 @@
+* {
+    scrollbar-color: map-get($custom-colors, "tanne") transparent;
+}
+
+body.layout-mannheim {
+    background-color: rgb(232 234 234);
+
+    #content {
+        max-width: 100%;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        #content {
+            // A bit hacky but its neutralizes the bootstrap column padding
+            width: calc(1440px + 24px);
+        }
+    }
+
+    .site-main {
+        margin-bottom: 0;
+    }
+
+    .entry-header {
+        // Standard pages have a top padding so the title is not covered by the
+        // navbar
+        padding-top: 150px;
+    }
+
+    .entry-content {
+        padding-bottom: 150px;
+
+        > * {
+            margin-left: 200px !important;
+            margin-right: 200px !important;
+        }
+
+        > .alignwide {
+            margin-left: 100px !important;
+            margin-right: 100px !important;
+        }
+
+        > .alignfull {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            width: 100%;
+        }
+    }
+
+    .styled-layout {
+
+        .entry-content {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    #primary {
+        background-color: $white;
+    }
+}
