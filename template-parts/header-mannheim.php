@@ -17,7 +17,7 @@
 				<i class="fas fa-bars open"></i>
 			</button>
 
-			<div class="collapse navbar-collapse" id="mainmenu-container">
+			<div class="navbar-collapse collapse-horizontal" id="mainmenu-container">
 				<?php
 					wp_nav_menu(
 						array(
@@ -78,6 +78,9 @@ class WP_Bootstrap_Navwalker_Mannheim extends Walker_Nav_Menu {
 			$item_type = "span";
 			$classes[] = " nav-item-heading";
 		}
+        if ($item->url != "#") {
+            $classes[] = " menu-item-link";
+        }
 
         $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
         $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';

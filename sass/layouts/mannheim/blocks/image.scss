@@ -58,3 +58,20 @@ body.layout-mannheim {
         }
     }
 }
+
+@include media-breakpoint-down(lg) {
+    body.layout-mannheim {
+
+        .wp-block-image {
+
+            .wp-element-caption {
+                font-size: 15px;
+
+                &::before {
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+        }
+    }
+}

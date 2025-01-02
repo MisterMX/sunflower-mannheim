@@ -19,9 +19,9 @@ $sunflower_styled_layout = get_post_meta( $post->ID, '_sunflower_styled_layout',
 $sunflower_metadata      = get_post_meta( $post->ID, '_sunflower_metadata', true ) ?? false;
 
 ?>
-	<div id="content" class="container <?php printf( '%s %s', esc_attr( $sunflower_layout_width ), esc_attr( $sunflower_styled_layout ) ); ?>">
-		<div class="row">
-			<div class="col-12">
+	<div id="content" class="container p-0 <?php printf( '%s %s', esc_attr( $sunflower_layout_width ), esc_attr( $sunflower_styled_layout ) ); ?>">
+		<div class="row m-0">
+			<div class="col-12 p-0">
 				<main id="primary" class="site-main">
 
 					<?php
